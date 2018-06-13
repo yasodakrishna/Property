@@ -3,12 +3,11 @@ var url = "mongodb://heroku_zn69xqhf:pplo9p5dcjqn6i3l0cdeiov71v@ds259250.mlab.co
 //"mongodb://krishnamongo:k9550793089@ds153460.mlab.com:53460/property";
 var money = require("money-math");
 var autoIncrement = require("mongodb-autoincrement");
-var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+
 // Validate User
 exports.UserValidate=function(req, res){
     var input = req.body;
-    mongoose.connect(url, function(err, db){ 
+            MongoClient.connect(url, function(err, db){ 
                 var dbo = db.db("property");
                 var query = { Email : input.Email , Password : input.Password };
                 dbo.collection('CLC_User').find(query).toArray(function(err,result){
@@ -30,8 +29,8 @@ exports.signUp = function(req, res){
     var input = req.body; 
     console.log('input is:'); 
     console.log(input);
-    mongoose.connect(url, function(err, db){ 
-                var dbo = db.db("property");
+            MongoClient.connect(url, function(err, db){ 
+                var dbo = db.db("heroku_zn69xqhf");
                 var collectionName="CLC_User";
                 autoIncrement.getNextSequence(dbo, collectionName,"UserID", function (err, autoIndex) {
                 var query = { 
