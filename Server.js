@@ -41,6 +41,10 @@ app.post('/cancelappointment',log.CancelAppointment);
 //    res.end(); //end the response
 // }).listen(8000); //the server object listens on port 8080
 
+// Set up a URL route
+app.get("/", function (req, res) {
+    res.send("Heroku Demo!");
+});
 
 const server = http.createServer(app).listen(process.env.Port, function(err){
 	if(err){
