@@ -42,7 +42,7 @@ app.post('/cancelappointment',log.CancelAppointment);
 // }).listen(8000); //the server object listens on port 8080
 
 
-const server = http.createServer(app).listen(4000, function(err){
+const server = http.createServer(app).listen(process.env.Port, function(err){
 	if(err){
 		console.log(err);
   	}else{
