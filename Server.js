@@ -49,5 +49,6 @@ const server = http.createServer(app).listen(process.env.PORT, function(err){
 		const host = server.address().address;
 		const port = server.address().port;
 		console.log("Server listening on " + host + port);
+		res.send("Heroku Demo!");
   	}
 });
