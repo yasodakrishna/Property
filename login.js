@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://krishnamongo:k9550793089@ds153460.mlab.com:53460/property";
+var url = "mongodb://heroku_zn69xqhf:pplo9p5dcjqn6i3l0cdeiov71v@ds259250.mlab.com:59250/heroku_zn69xqhf";//"mongodb://krishnamongo:k9550793089@ds153460.mlab.com:53460/property";
 var money = require("money-math");
 var autoIncrement = require("mongodb-autoincrement");
 
